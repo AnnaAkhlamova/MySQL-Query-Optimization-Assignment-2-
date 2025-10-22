@@ -35,8 +35,8 @@ CREATE INDEX idx_orders_date_customer_product
 ON orders (order_date, customer_id, product_id);
 
 WITH recent_orders AS (
-    SELECT id, customer_id, quantity, product_id, order_date
-    FROM orders
+    SELECT id, order_date, customer_id, product_id, quantity
+    FROM orders USE INDEX (idx_orders_date_customer_product)
     WHERE order_date >= '2024-01-01'
 )
 SELECT
