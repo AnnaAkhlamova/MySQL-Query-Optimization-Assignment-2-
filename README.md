@@ -17,7 +17,7 @@ SELECT * FROM orders;
 SHOW INDEXES FROM customers;
 SHOW INDEXES FROM products;
 SHOW INDEXES FROM orders;
-
+```
 ## Unoptimized Query
 
 The following query retrieves customers from the United States (or similar), their total orders, total quantity, total spent, and last order date. It demonstrates common inefficiencies such as DISTINCT usage, non-indexed joins, and filtering on expressions.
